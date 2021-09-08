@@ -1,0 +1,27 @@
+<h3>List all article</h3>
+<%= link_to 'create Article', new_article_path %>
+<table>
+
+<tr>
+
+<th>title</th>
+<th>description</th>
+<th>more</th>
+
+</tr>
+<% @articles.each do |article| %>
+
+<tr>
+<th><%= article.title %></th>
+<th><%= article.description %></th>
+<th><%= link_to 'Edit', edit_article_path(article)  %></th>
+<th><%= link_to 'show', article_path(article) %></th>
+<th> <%= link_to 'Delete', article_path(article), method: :delete  %></th>
+
+</tr>
+<% end %>
+
+</table>
+
+
+
